@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<LookupCache async="false" continueOnError="false" enabled="true" name="TM-TokenTrackLookup">
+    <DisplayName>TM-TokenTrackLookup</DisplayName>
+    <Properties/>
+    <CacheKey>
+        <Prefix>openAi.token.track</Prefix>
+        <KeyFragment ref="client.ip"/>
+    </CacheKey>
+    <CacheResource>cache.transformation.xsl</CacheResource>
+    <Scope>Exclusive</Scope>
+    <AssignTo>tokenCount</AssignTo>
+</LookupCache>

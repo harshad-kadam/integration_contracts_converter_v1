@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <FaultRules>
+        <FaultRule name="Error Handling">
+            <Step>
+                <Name>MED-XmlFormatValidationError</Name>
+                <Condition>(messagevalidation.MED-RequestFormatValidation.failed = "true") and (error.header.Content-Type ~ "*/xml*")</Condition>
+            </Step>
+            <Step>
+                <Name>MED-JsonFormatValidationError</Name>
+                <Condition>(messagevalidation.MED-RequestFormatValidation.failed = "true") and (error.header.Content-Type ~ "*/json*")</Condition>
+            </Step>
+            <Condition>(fault.detail.errorcode = "steps.messagevalidation.Failed")</Condition>
+        </FaultRule>
+    </FaultRules>
+    <!--<DefaultFaultRule name="Global Handling">-->
+    <!--  <Step>-->
+    <!--    <Name>ReturnGenericError</Name>-->
+    <!--  </Step>-->
+    <!--  <AlwaysEnforce>true</AlwaysEnforce>-->
+    <!--</DefaultFaultRule>-->
+    <PreFlow name="PreFlow">
+        <Request>
+            <Step>
+                <Name>MED-RequestFormatValidation</Name>
+                <Condition>(request.header.Content-Type ~ "*/xml*") or (request.header.Content-Type ~ "*/json*") </Condition>
+            </Step>
+            <!--<Step>-->
+            <!--    <Name>EXT-StandardSecurityMechanism</Name>-->
+            <!--</Step>-->
+        </Request>
+        <Response/>
+    </PreFlow>
+    <Flows>
+        <Flow name="OptionsPreFlight">
+            <Description>
+          This flow handles pre-flight options for requests, providing necessary information 
+          and handling configuration options before the main processing of the request.
+        </Description>
+            <Request/>
+            <Response>
+                <Step>
+                    <Name>add-cors</Name>
+                </Step>
+            </Response>
+            <Condition>request.verb == "OPTIONS" AND request.header.origin != null AND request.header.Access-Control-Request-Method != null</Condition>
+        </Flow>
+        <Flow name="Xml to Json">
+            <Description>
+          This flow is responsible for transforming XML data into JSON format. 
+          It processes incoming XML documents and converts them into a structured 
+          JSON representation, facilitating interoperability and compatibility 
+          with systems that expect JSON-formatted data.
+        </Description>
+            <Request>
+                <Step>
+                    <Name>MED-XMLThreatProtection</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>MED-XMLtoJSON</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/xmltojson")</Condition>
+        </Flow>
+        <Flow name="Json to Xml">
+            <Description>
+          The "JsonToXml" flow handles the conversion of JSON data into XML format. 
+          It plays a crucial role in transforming JSON objects into a structured 
+          XML representation, enabling seamless integration with systems that 
+          require XML-formatted data. This flow ensures data compatibility 
+          and facilitates communication between applications using different 
+          data interchange formats.
+        </Description>
+            <Request>
+                <Step>
+                    <Name>SEC-JSONThreatProtection</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>MED-JSONtoXML</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/jsontoxml")</Condition>
+        </Flow>
+        <Flow name="Xsl for xml transformation">
+            <Description>
+          The AI integrated "XslForXmlTransformation" flow is dedicated to applying XSL (eXtensible Stylesheet Language) 
+          transformations to XML documents. This crucial process involves utilizing XSL stylesheets 
+          to define the structure and presentation of the transformed XML output. By employing XSL, 
+          this flow enables powerful and flexible transformations, allowing customization and 
+          adaptation of XML data to meet specific formatting and content requirements.
+        </Description>
+            <Request>
+                <Step>
+                    <Name>MED-GetAIConnectCreds</Name>
+                </Step>
+                <Step>
+                    <Name>TM-TokenTrackLookup</Name>
+                </Step>
+                <Step>
+                    <Name>MED-TokenLimitExceeded</Name>
+                    <Condition>(tokenCount &gt; 700)</Condition>
+                </Step>
+                <Step>
+                    <Name>EXT-AiRequestHandler</Name>
+                </Step>
+                <Step>
+                    <Name>MED-InvalidRequestError</Name>
+                    <Condition>(errorFlag=="true")</Condition>
+                </Step>
+                <Step>
+                    <Name>MED-RequestContentExceedError</Name>
+                    <Condition>(request.header.Content-Length &gt; 300)</Condition>
+                </Step>
+                <Step>
+                    <Name>TM-XSLLookupRequest</Name>
+                </Step>
+                <Step>
+                    <Name>MED-RequestAlreadyServed</Name>
+                    <Condition>lookupcache.TM-XSLLookupRequest.cachehit Is "true"</Condition>
+                </Step>
+                <Step>
+                    <Name>EXT-OpenAIConnect</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>EXT-AiResponseHandler</Name>
+                </Step>
+                <Step>
+                    <Name>TM-TokenTrackPopulate</Name>
+                    <Condition>(openAiResponse.status.code NotEquals "200")</Condition>
+                </Step>
+                <Step>
+                    <Name>TF-XSLPopulateResponse</Name>
+                    <Condition>(openAiResponse.status.code NotEquals "200")</Condition>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/xsl")</Condition>
+        </Flow>
+        <Flow name="contracts convert">
+            <Description>
+          The "ContractsConvert" flow specializes in transforming XML data into snake case formatted JSON. 
+          This process involves converting XML documents, commonly representing contracts or agreements, 
+          into JSON objects where keys are formatted in snake case. The flow ensures consistency and 
+          compatibility with systems or APIs that expect JSON payloads in snake case notation, providing 
+          seamless integration and data interchange across different components of the application.
+          *Main moto*: XML to Snake Case JSON with controlled manner, like business integrations need.
+        </Description>
+            <Request>
+                <Step>
+                    <Name>MED-XMLThreatProtection</Name>
+                </Step>
+                <Step>
+                    <Name>SEC-JSONThreatProtection</Name>
+                </Step>
+                <Step>
+                    <Name>MED-GetResourceURI</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>XSL-CustomRulesForConversion</Name>
+                </Step>
+                <!--<Step>-->
+                <!--    <Name>XSL-ISOConversion</Name>-->
+                <!--</Step>-->
+                <Step>
+                    <Name>MED-XMLtoJSON</Name>
+                </Step>
+                <Step>
+                    <Name>MED-ExtractVariables</Name>
+                </Step>
+                <!--<Step>-->
+                <!--    <Name>MED-Mediations</Name>-->
+                <!--</Step>-->
+                <Step>
+                    <Name>MED-IntegrationConverter</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/")</Condition>
+        </Flow>
+    </Flows>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response/>
+    </PostFlow>
+    <HTTPProxyConnection>
+        <BasePath>/api/v1</BasePath>
+        <VirtualHost>secure</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="default"/>
+</ProxyEndpoint>

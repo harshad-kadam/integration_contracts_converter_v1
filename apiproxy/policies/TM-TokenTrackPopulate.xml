@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PopulateCache async="false" continueOnError="false" enabled="true" name="TM-TokenTrackPopulate">
+    <DisplayName>TM-TokenTrackPopulate</DisplayName>
+    <Properties/>
+    <CacheKey>
+        <Prefix>openAi.token.track</Prefix>
+        <KeyFragment ref="client.ip"/>
+    </CacheKey>
+    <CacheResource>cache.transformation.xsl</CacheResource>
+    <Scope>Exclusive</Scope>
+    <ExpirySettings>
+        <!--10 days : https://www.google.com/search?q=10+days+in+sec-->
+        <TimeoutInSec>864000</TimeoutInSec>
+    </ExpirySettings>
+    <Source>tokenCount</Source>
+</PopulateCache>

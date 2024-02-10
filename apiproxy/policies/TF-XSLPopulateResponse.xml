@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PopulateCache async="false" continueOnError="false" enabled="true" name="TF-XSLPopulateResponse">
+    <DisplayName>TF-XSLPopulateResponse</DisplayName>
+    <Properties/>
+    <CacheKey>
+        <Prefix>openAi.request.track</Prefix>
+        <KeyFragment ref="reqPayload"/>
+    </CacheKey>
+    <CacheResource>cache.transformation.xsl</CacheResource>
+    <Scope>Exclusive</Scope>
+    <!--<ExpirySettings>-->
+    <!--    <TimeoutInSec>3600</TimeoutInSec>-->
+    <!--</ExpirySettings>-->
+    <Source>openAiResponse</Source>
+</PopulateCache>

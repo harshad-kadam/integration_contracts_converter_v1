@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ServiceCallout async="false" continueOnError="true" enabled="true" name="EXT-OpenAIConnect">
+    <DisplayName>EXT-OpenAIConnect</DisplayName>
+    <Properties/>
+    <Request clearPayload="true" variable="openAiRequest">
+        <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+        <Set>
+            <Verb>POST</Verb>
+            <Headers>
+                <Header name="Content-Type">application/json</Header>
+                <Header name="Authorization">Bearer {private.ai.restricted.key}</Header>
+            </Headers>
+            <Payload contentType="application/json">
+            {
+                "model": "{private.ai.model}",
+                "messages": [
+                    {
+                        "role": "{private.ai.role}",
+                        "content": {request.content}
+                    }
+                ],
+                "temperature": 0.7
+            }
+            </Payload>
+        </Set>
+    </Request>
+    <Response>openAiResponse</Response>
+    <HTTPTargetConnection>
+        <Properties/>
+        <URL>https://api.openai.com/v1/chat/completions</URL>
+    </HTTPTargetConnection>
+</ServiceCallout>

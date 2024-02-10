@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Manifest name="manifest">
+    <Policies>
+        <VersionInfo resourceName="EXT-AddCORSHeaders" version="SHA-512:bdd289877f079a5ebf2cf95faca35157c6c3cd7dc63e072b582964fbc8156358451a1f59dc305c03b680acce095024034f55568b87d67ca2a3b90ab592bac7d7"/>
+        <VersionInfo resourceName="EXT-AiRequestHandler" version="SHA-512:daac03d65e0f9ccd9821f17401eb655efc130bfebd8f8069c8129b60362ace1b890c2439f467a23992c4a6e6782470571b113df4c085059b192168bd2c243599"/>
+        <VersionInfo resourceName="EXT-AiResponseHandler" version="SHA-512:8157fdc35501f302af941b9f09551db197e0ad03fc9f865a8fed0be17e8305b8b916fe0865ac34b4ce3a35ebf08dc10a22b58453f9297fd75774f066cab5438c"/>
+        <VersionInfo resourceName="EXT-OpenAIConnect" version="SHA-512:376fa2d9a208fd75b0cd40dec6e95cfcc78009f07b0439144fde41d907774beb4d1b5a91fb89dd9a90c16a523df60dd7cae0799a0beecf062eec1983b14ed168"/>
+        <VersionInfo resourceName="EXT-StandardSecurityMechanism" version="SHA-512:30ed72bf256feecf52cf4adb5c32c4f2bbafdf0babb1ece49bbbfad5f11fa5474a88b6fc16635c080e144b7ed59e07a85af221fc3e5e34236d9c76cb2a415742"/>
+        <VersionInfo resourceName="MED-ExtractVariables" version="SHA-512:030704fad8c12589c1a1a81aa02abf2a5d4d15bb1c48e005531e2a33137235d63281b9e9c2fad262f90ec73ac76bb72a1674d505dc26a24c12a989b58984d16c"/>
+        <VersionInfo resourceName="MED-GetAIConnectCreds" version="SHA-512:50806c542de338cfe4677d7254d05b2385ee2cb2a8876866f456dec66f749536d981d9bbb3a79a73a8a3dc3e6c04f5b852a5616cb65500d9944458582f1dac57"/>
+        <VersionInfo resourceName="MED-GetResourceURI" version="SHA-512:3e4a5f9977626eaa95d92ecc5fda6e987f82240a0614410c545f3997aa987f848f38d77eb7fafc122ed6d4e18514118022c54053099bf7f003fa4298521430e3"/>
+        <VersionInfo resourceName="MED-IntegrationConverter" version="SHA-512:3758a6c9ac0d8aaff94661b42651bc9f0cfc3629e07a1bfe683ebeb19bffb2d8d292c0040f4338682f4c66d57e246e8ae9f2616046d602b94db0119daf1beb4a"/>
+        <VersionInfo resourceName="MED-InvalidRequestError" version="SHA-512:f7c6b215aa5b1f90bd73f83b377aacedb636085b71ce1bd8781f59829f9d0217adf22740313a25be191390158ffa448b27235a0b06078acd9bf291afa4f70acb"/>
+        <VersionInfo resourceName="MED-JSONtoXML" version="SHA-512:a60a2559ef4bcf07d1058ea341f967a6f0f5a6d5a6b2a93077d73af6c1fe241ff06f4a06a518278e9c57d0921af0f8c6bf2474aae9c145dc7b19de63b04e836a"/>
+        <VersionInfo resourceName="MED-JsonFormatValidationError" version="SHA-512:05f1ce0b14be91acb84b7a5a8b033fd0839e87d1b4c4eb7f52f1ad8a20258d1c39da5670cfb2a35bca2d9933dbb4aedee99f3b348468c2ae7e4d0bded0713066"/>
+        <VersionInfo resourceName="MED-Mediations" version="SHA-512:1015221669fe4ec8c65ce69ac8b3531204cdd1cd6c22d0509e5ccd83aca98c145ba2fd9389d6b55ed332a77b443c74d560a5d2004d95b738e6a44a18e3ec0923"/>
+        <VersionInfo resourceName="MED-RequestAlreadyServed" version="SHA-512:a9b374ea59acdc923df2cbfe194aed5d68e1dd18d59e18e01fa91a32032679de424528f877dc9f1511d83742e26de74d7ab804e3e3c7ceb2fa9c340808b6b9a4"/>
+        <VersionInfo resourceName="MED-RequestContentExceedError" version="SHA-512:96a4851cc047d060d91010eed8d6c4aab6ddeefcdbb62e09b94a03bd79ec26e5fa2ab173c02d75868c80156980ab42406d13b4f810d4acc8c3f366764f06a17d"/>
+        <VersionInfo resourceName="MED-RequestFormatValidation" version="SHA-512:83da7e46bbf085a574018d479d8aadb1f72194758974685f8ebcb5a3838bbb1734542a3f0eb25a7a1ba0b108a926cf3c36e3157e1dab102e6dc8121d4cabd73f"/>
+        <VersionInfo resourceName="MED-TokenLimitExceeded" version="SHA-512:07d9a09d9cd5aafcefd9f8bf4a5c363e8181e20c28030d8897349f5ca343cc5927e8cf62dbe90fccde36ff0b049b31e1c2d0ab1a7f5f7623e691c82675e5118a"/>
+        <VersionInfo resourceName="MED-XMLThreatProtection" version="SHA-512:e94321743b81aad92f3d25d2967f14bf3b6947798ba86bb332dbd6ac82dfed076d46157cc16692ace0e5db4684ced8ab3c3e87ce704099cf183fedbda2998279"/>
+        <VersionInfo resourceName="MED-XMLtoJSON" version="SHA-512:a10ab8e8188ef6f79f7094bebe656edd5f988e746fc249fa9fe11c11a2d5af225935e02a001e01c2352b48fb713fd59477471e6ac43c854a1cfd309fcb0e5024"/>
+        <VersionInfo resourceName="MED-XmlFormatValidationError" version="SHA-512:9d6cf47c3631f7959e790e17955338e35d9885eafac5d8f73d9b6c6a691a94bad3912ee48b7b044aacd49a7618ff44d4853000ce521975025c2e9cfbd0d40a32"/>
+        <VersionInfo resourceName="SEC-JSONThreatProtection" version="SHA-512:f03a32d235d8b7a6fd2506895ab30751fd0e3385a38fd0b455ddf01a7568ad9ea76fefa78d36116d270747651718e2f297e315d1f7c6c4980afd2ec33a4a5f48"/>
+        <VersionInfo resourceName="TF-XSLPopulateResponse" version="SHA-512:02ed1470fe8bc689f9d5be0e2d7a3c3ac0c519ef3be604613c00a838735d7fcf58954632a6c854e8334556864baac2ee6c046a0af60b9930515ceeb71efe83aa"/>
+        <VersionInfo resourceName="TM-TokenTrackLookup" version="SHA-512:aaa210371d71caabb6396a248e7ce8aa4e86d6c9797c36249534d5d9763a72f1bbde0e05cb8d3b0f2340d40eef33790af52d64631799ac5570d49920c9c62da4"/>
+        <VersionInfo resourceName="TM-TokenTrackPopulate" version="SHA-512:545c77b16c6a9d27ef9ad233d54ae4713f5472b2d8a86f34afe13bfd5826df448650da92e009016fd50b371109f36a89d90be2d0ebcadb265d499d1a142522c1"/>
+        <VersionInfo resourceName="TM-XSLLookupRequest" version="SHA-512:c5fd3223318da5a89b4a897bdeb6c4e13c98171bd5e56c35beed9f22ddb238f22a3901cd1af6ee2ae60aa035e6cd0d7389db5cd96d0387cba5fe90dffa0848cb"/>
+        <VersionInfo resourceName="XSL-CustomRulesForConversion" version="SHA-512:ec6f46f1aed30ce248402a9449355cbde31caac624a67c1b32fdb995770061562470f5ca7e4ec1d6d00bb532a4840fb5874136036530229e44a5e5b4df328637"/>
+        <VersionInfo resourceName="XSL-ISOConversion" version="SHA-512:26c732f7b5fa3b110d441ed1af40d2f3b88cd9c09a4dabb845cfaa4a29cb1dccca06deaea8f2387890a7f7d20fa3a56b3f4a8a394e40259c4b74dcf86f295890"/>
+        <VersionInfo resourceName="add-cors" version="SHA-512:eede00a55c4beaaf85848aeb8f8535cfaaafe54835493b3277e75f18a2b13bd7820cf53485c1e15bcf08c9560d1526a7edfea36fe06663230e929b35445f1472"/>
+    </Policies>
+    <ProxyEndpoints>
+        <VersionInfo resourceName="default" version="SHA-512:d9cb7c3bdea1e010634aed9029e4fd86b568e6a1f5c9c8198b5db0aa4cfbd8b35079576d16792c3b8f692dbd4648e355f910f1bab66a2db2363f0311e612741d"/>
+    </ProxyEndpoints>
+    <Resources>
+        <VersionInfo resourceName="jsc://addCORSHeaders.js" version="SHA-512:e13bf6207b19e59817084b1722834aa8583f4169dc7656089355f9f2cb630786847ec33489232f09a2b69bc2580bbe071f0004b0c6d56f96fb49e92d35e6940a"/>
+        <VersionInfo resourceName="jsc://aiRequestHandler.js" version="SHA-512:9ac881a5c194d741c87abaea3370fa57749d94cee93b2ffc95d830ea73765da61b8fb848f58514103c76865796a9b5ba81c1e618f1ff9f079ebe5c0f3390fa59"/>
+        <VersionInfo resourceName="jsc://aiResponseHandler.js" version="SHA-512:196618afefb58142bd56d114ddd93098c6594322f1baaf1e63aa331a5f1cd07a19942caa9465eeb90b6276ba83fbbf5ecdc40359af243634e7c649d476c1b97a"/>
+        <VersionInfo resourceName="jsc://converterFunctions.js" version="SHA-512:a6817551f31157af7eba2e46f12c0dd604bd16dc3881dbd2c37912fbf59eea6a1025f7c41a76389bd9a786318ffafc19dda1e7e88eafc42e57f2bed7b75bd91d"/>
+        <VersionInfo resourceName="jsc://integrationReqMediation.js" version="SHA-512:731b0ec851941eeab424741ae594d0862297251a441f46033b1315e1217f76996ee6c8461908bf73a6960eb8a9c962ec0ff8df21d1cc6de2f8aa11edf6dad4bf"/>
+        <VersionInfo resourceName="jsc://staticConstructs.js" version="SHA-512:3b12b58eefbb0a99b22a25edf9ffd7a6d6e59f44f35ed6b7c6f947beea1c6e84c32ea4d14d39426d6b6249d8f59187c36a1bf60695306ba9f8e4d6a584192d3a"/>
+        <VersionInfo resourceName="xsl://ISOconversion.xsl" version="SHA-512:b841c537be2062f5148a4184bae6ef9d2b4e6aa6588e98ec1ef1322dfd61bd9b2714736064794f0965a381bf850ea12ec1b780aebecf4f90b14e511b35073749"/>
+        <VersionInfo resourceName="xsl://XSL-Transform-1.xsl" version="SHA-512:46696c4363f6920b5290e5f97c0229c7136c2a6ee9f1138b50899d2e325d31247907f8180c27810ae27c3afcec36ed1eff9f68d229c081767b1b641f5bef6b07"/>
+    </Resources>
+    <SharedFlows/>
+    <TargetEndpoints/>
+</Manifest>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<KeyValueMapOperations async="false" continueOnError="false" enabled="true" name="MED-GetResourceURI" mapIdentifier="_kvm_transType">
+    <DisplayName>MED-GetResourceURI</DisplayName>
+    <Properties/>
+    <ExclusiveCache>false</ExclusiveCache>
+    <!--increase-->
+    <ExpiryTimeInSecs>300</ExpiryTimeInSecs>
+    <Get assignTo="transTypesMap">
+        <Key>
+            <Parameter>resource_uri</Parameter>
+        </Key>
+    </Get>
+    <Scope>environment</Scope>
+</KeyValueMapOperations>

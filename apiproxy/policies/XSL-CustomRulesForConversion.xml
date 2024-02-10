@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<XSL async="false" continueOnError="false" enabled="true" name="XSL-CustomRulesForConversion">
+    <DisplayName>XSL-CustomRulesForConversion</DisplayName>
+    <Properties/>
+    <Source>response</Source>
+    <ResourceURL>xsl://XSL-Transform-1.xsl</ResourceURL>
+    <Parameters ignoreUnresolvedVariables="true"/>
+    <OutputVariable/>
+</XSL>

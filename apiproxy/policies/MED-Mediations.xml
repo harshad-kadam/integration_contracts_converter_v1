@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="MED-Mediations">
+    <DisplayName>MED-Mediations</DisplayName>
+    <Properties/>
+    <AssignVariable>
+        <Name>decoded</Name>
+        <Template>{decodeBase64(encoded_value)}</Template>
+    </AssignVariable>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<XMLThreatProtection async="false" continueOnError="false" enabled="true" name="MED-XMLThreatProtection">
+    <DisplayName>MED-XMLThreatProtection</DisplayName>
+    <Properties/>
+    <NameLimits>
+        <Element>100</Element>
+        <Attribute>10</Attribute>
+        <NamespacePrefix>10</NamespacePrefix>
+        <ProcessingInstructionTarget>10</ProcessingInstructionTarget>
+    </NameLimits>
+    <Source>request</Source>
+    <StructureLimits>
+        <NodeDepth>8</NodeDepth>
+        <AttributeCountPerElement>2</AttributeCountPerElement>
+        <NamespaceCountPerElement>3</NamespaceCountPerElement>
+        <ChildCount includeComment="true" includeElement="true" includeProcessingInstruction="true" includeText="true">180</ChildCount>
+    </StructureLimits>
+    <ValueLimits>
+        <Text>1500</Text>
+        <Attribute>100</Attribute>
+        <NamespaceURI>100</NamespaceURI>
+        <Comment>10</Comment>
+        <ProcessingInstructionData>10</ProcessingInstructionData>
+    </ValueLimits>
+</XMLThreatProtection>

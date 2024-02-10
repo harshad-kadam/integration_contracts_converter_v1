@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables async="false" continueOnError="false" enabled="true" name="MED-ExtractVariables">
+    <DisplayName>MED-ExtractVariables</DisplayName>
+    <Properties/>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <JSONPayload>
+        <Variable name="message.content">
+            <JSONPath>$.XMLReq</JSONPath>
+        </Variable>
+        <Variable name="transType">
+            <JSONPath>$.XMLReq.transType</JSONPath>
+        </Variable>
+    </JSONPayload>
+    <Source clearPayload="false">response</Source>
+</ExtractVariables>

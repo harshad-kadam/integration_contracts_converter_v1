@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="MED-JsonFormatValidationError">
+    <DisplayName>MED-JsonFormatValidationError</DisplayName>
+    <Properties/>
+    <!--<Copy source="error"/>-->
+    <Set>
+        <Payload contentType="application/json">
+        {
+            "error_code": "40000",
+            "error_description": "Bad request. Please check your input and try again."
+        }
+        </Payload>
+        <StatusCode>400</StatusCode>
+        <ReasonPhrase>Bad Request</ReasonPhrase>
+    </Set>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="true" transport="http" type="error"/>
+</AssignMessage>

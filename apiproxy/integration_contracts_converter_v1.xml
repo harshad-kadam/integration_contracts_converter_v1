@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="3" name="integration_contracts_converter_v1">
+    <Basepaths>/ucp</Basepaths>
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1706425810959</CreatedAt>
+    <CreatedBy>kadamharshad25@gmail.com</CreatedBy>
+    <Description>This proxy acts as a contracts converter 
+    to smartly convert contracts based on  below factors
+    1]naming standards
+    2]custom conversion rules
+    3]consistency across businesses
+    4]XML to JSON
+    5]JSON to XML
+    6]XML to Snake Case JSON with controlled manner, like business integrations need
+    7]AI integrated flo to get Xsl script For XmlTransformation  </Description>
+    <DisplayName>integration_contracts_converter_v1</DisplayName>
+    <LastModifiedAt>1706807241670</LastModifiedAt>
+    <LastModifiedBy>kadamharshad25@gmail.com</LastModifiedBy>
+    <ManifestVersion>SHA-512:b5e17c7655d5aefd3f7af769c01808b99057d278c9352e6d243aa77984f54288eff9e9283c4a1fa6e1321bc7067f4a1162c0b27337276c61d84f7ca7a26abe26:ap-southeast-2</ManifestVersion>
+    <Policies>
+        <Policy>EXT-AddCORSHeaders</Policy>
+        <Policy>EXT-AiRequestHandler</Policy>
+        <Policy>EXT-AiResponseHandler</Policy>
+        <Policy>EXT-OpenAIConnect</Policy>
+        <Policy>EXT-StandardSecurityMechanism</Policy>
+        <Policy>MED-ExtractVariables</Policy>
+        <Policy>MED-GetAIConnectCreds</Policy>
+        <Policy>MED-GetResourceURI</Policy>
+        <Policy>MED-IntegrationConverter</Policy>
+        <Policy>MED-InvalidRequestError</Policy>
+        <Policy>MED-JSONtoXML</Policy>
+        <Policy>MED-JsonFormatValidationError</Policy>
+        <Policy>MED-Mediations</Policy>
+        <Policy>MED-RequestAlreadyServed</Policy>
+        <Policy>MED-RequestContentExceedError</Policy>
+        <Policy>MED-RequestFormatValidation</Policy>
+        <Policy>MED-TokenLimitExceeded</Policy>
+        <Policy>MED-XMLThreatProtection</Policy>
+        <Policy>MED-XMLtoJSON</Policy>
+        <Policy>MED-XmlFormatValidationError</Policy>
+        <Policy>SEC-JSONThreatProtection</Policy>
+        <Policy>TF-XSLPopulateResponse</Policy>
+        <Policy>TM-TokenTrackLookup</Policy>
+        <Policy>TM-TokenTrackPopulate</Policy>
+        <Policy>TM-XSLLookupRequest</Policy>
+        <Policy>XSL-CustomRulesForConversion</Policy>
+        <Policy>XSL-ISOConversion</Policy>
+        <Policy>add-cors</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources>
+        <Resource>xsl://ISOconversion.xsl</Resource>
+        <Resource>xsl://XSL-Transform-1.xsl</Resource>
+        <Resource>jsc://addCORSHeaders.js</Resource>
+        <Resource>jsc://aiRequestHandler.js</Resource>
+        <Resource>jsc://aiResponseHandler.js</Resource>
+        <Resource>jsc://converterFunctions.js</Resource>
+        <Resource>jsc://integrationReqMediation.js</Resource>
+        <Resource>jsc://staticConstructs.js</Resource>
+    </Resources>
+    <Spec></Spec>
+    <TargetServers/>
+    <TargetEndpoints/>
+</APIProxy>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<KeyValueMapOperations async="false" continueOnError="false" enabled="true" name="MED-GetAIConnectCreds" mapIdentifier="_kvm_opnenAi">
+    <DisplayName>MED-GetAIConnectCreds</DisplayName>
+    <Properties/>
+    <ExclusiveCache>false</ExclusiveCache>
+    <ExpiryTimeInSecs>300</ExpiryTimeInSecs>
+    <Get assignTo="private.ai.model">
+        <Key>
+            <Parameter>ai.model</Parameter>
+        </Key>
+    </Get>
+    <Get assignTo="private.ai.role">
+        <Key>
+            <Parameter>ai.role</Parameter>
+        </Key>
+    </Get>
+    <Get assignTo="private.ai.restricted.key">
+        <Key>
+            <Parameter>ai.restricted.key</Parameter>
+        </Key>
+    </Get>
+    <Scope>environment</Scope>
+</KeyValueMapOperations>

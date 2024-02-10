@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<LookupCache async="false" continueOnError="false" enabled="true" name="TM-XSLLookupRequest">
+    <DisplayName>TM-XSLLookupRequest</DisplayName>
+    <Properties/>
+    <CacheKey>
+        <Prefix>openAi.request.track</Prefix>
+        <KeyFragment ref="reqPayload"/>
+    </CacheKey>
+    <CacheResource>cache.transformation.xsl</CacheResource>
+    <Scope>Exclusive</Scope>
+    <AssignTo>openAiResponse</AssignTo>
+</LookupCache>

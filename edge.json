@@ -1,0 +1,18 @@
+{
+    "version": "1.0",
+    "envConfig": {
+        "prod": {
+            "targetServers": [],
+            "virtualHosts": [],
+            "kvms": [],
+            "resourcefiles": []
+        },
+        "test": {
+            "targetServers": [],
+            "virtualHosts": [],
+            "kvms": [],
+            "resourcefiles": []
+        }
+    },
+    "orgConfig": {}
+}
