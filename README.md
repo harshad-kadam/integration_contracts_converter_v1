@@ -208,6 +208,6 @@ curl --location 'https://kadamharshad25-eval-prod.apigee.net/api/v1/xsl' \
 # 😊Thanks for being here🚀
 
 > [!NOTE]
-> Please modify proxy code based on your requirement/need/convinience.
->
 > I have built complete code without trace sessions(free tier apigee edge), it might lack code accuracy.
+>
+> Please modify proxy code based on your requirement/need/convinience.
